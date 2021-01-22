@@ -1,14 +1,15 @@
 <template>
-  <nav class="level has-background-primary">
+  <nav class="level has-background-primary has-text-white">
     <div class="level-item has-text-centered">
       <figure class="image is-128x128">
-        <img class="is-rounded" :src="headerImage" width="150" height="150" />
+        <img class="is-rounded" :src="headerImage" />
       </figure>
     </div>
     <div class="level-item has-text-centered">
       <div>
         <p class="title">{{ mydata.name }}</p>
         <p class="heading">{{ mydata.age }}</p>
+        <p class="heading">{{ mydata.status }}</p>
       </div>
     </div>
     <div class="level-item has-text-centered">
@@ -43,7 +44,14 @@
     <div class="level-item has-text-centered">
       <div>
         <p class="title">About me</p>
-        <p class="heading">Followers</p>
+        <span class="heading">
+          <vue-fontawesome :icon="['fas', 'graduation-cap']" />
+          {{ mydata.uni }}
+        </span>
+        <span class="heading">
+          <vue-fontawesome :icon="['fas', 'map-marker']" />
+          {{ mydata.home }}
+        </span>
       </div>
     </div>
   </nav>
@@ -57,6 +65,9 @@ export default {
       mydata: {
         name: "Racim RIGHI",
         age: "21 ans",
+        uni: "Université CY Cergy Paris",
+        home: "Paris 75019, France",
+        status: "Looking for an internship",
       },
       contact: {
         email: "racim458@gmail.com",
